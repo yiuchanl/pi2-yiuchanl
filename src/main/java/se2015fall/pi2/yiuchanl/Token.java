@@ -1,24 +1,24 @@
 
 
-/* First created by JCasGen Sun Sep 13 14:57:34 EDT 2015 */
+/* First created by JCasGen Mon Sep 14 11:44:42 EDT 2015 */
+package se2015fall.pi2.yiuchanl;
 
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
-import org.apache.uima.jcas.cas.TOP;
 
 
-/** for score
- * Updated by JCasGen Sun Sep 13 14:57:34 EDT 2015
+/** this is a type for token annotation
+ * Updated by JCasGen Mon Sep 14 17:54:44 EDT 2015
  * XML source: /Users/imlyc/Desktop/SoftwareEngineer/maven.1442157268571/pi2-yiuchanl/src/main/resources/pi2-yiuchanl-typesystem.xml
  * @generated */
-public class score extends TOP {
+public class Token extends QAAnnotation {
   /** @generated
    * @ordered 
    */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = JCasRegistry.register(score.class);
+  public final static int typeIndexID = JCasRegistry.register(Token.class);
   /** @generated
    * @ordered 
    */
@@ -32,14 +32,14 @@ public class score extends TOP {
  
   /** Never called.  Disable default constructor
    * @generated */
-  protected score() {/* intentionally empty block */}
+  protected Token() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
    * @generated
    * @param addr low level Feature Structure reference
    * @param type the type of this Feature Structure 
    */
-  public score(int addr, TOP_Type type) {
+  public Token(int addr, TOP_Type type) {
     super(addr, type);
     readObject();
   }
@@ -47,10 +47,22 @@ public class score extends TOP {
   /** @generated
    * @param jcas JCas to which this Feature Structure belongs 
    */
-  public score(JCas jcas) {
+  public Token(JCas jcas) {
     super(jcas);
     readObject();   
   } 
+
+  /** @generated
+   * @param jcas JCas to which this Feature Structure belongs
+   * @param begin offset to the begin spot in the SofA
+   * @param end offset to the end spot in the SofA 
+  */  
+  public Token(JCas jcas, int begin, int end) {
+    super(jcas);
+    setBegin(begin);
+    setEnd(end);
+    readObject();
+  }   
 
   /** 
    * <!-- begin-user-doc -->

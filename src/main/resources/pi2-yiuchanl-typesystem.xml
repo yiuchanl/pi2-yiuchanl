@@ -6,9 +6,111 @@
     <vendor/>
   <types>
     <typeDescription>
-      <name>score</name>
-      <description>for score</description>
+      <name>se2015fall.pi2.yiuchanl.QAAnnotation</name>
+      <description>this is  the super type for question and answer types annotation</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>confidenceScore</name>
+          <description>confidence score of the annotation</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>sourceName</name>
+          <description>name of annotation source</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>se2015fall.pi2.yiuchanl.Token</name>
+      <description>this is a type for token annotation</description>
+      <supertypeName>se2015fall.pi2.yiuchanl.QAAnnotation</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>se2015fall.pi2.yiuchanl.nGram</name>
+      <description>this is a type for ngram annotation</description>
+      <supertypeName>se2015fall.pi2.yiuchanl.QAAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>n</name>
+          <description>n=1 -&gt; unigram, n=2 -&gt; bigram, n=3 -&gt; trigram</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>gram</name>
+          <description>list of ngram elements</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>se2015fall.pi2.yiuchanl.Token</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>se2015fall.pi2.yiuchanl.Answer</name>
+      <description>this is a type for answer annotation</description>
+      <supertypeName>se2015fall.pi2.yiuchanl.QAAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>score</name>
+          <description>score of the answer</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>isCorrect</name>
+          <description>if the answer is correct</description>
+          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>tokens</name>
+          <description>tokens of the answer</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>se2015fall.pi2.yiuchanl.Token</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>nGrams</name>
+          <description>ngrams of the answer</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>se2015fall.pi2.yiuchanl.nGram</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>se2015fall.pi2.yiuchanl.Question</name>
+      <description>this is a type for question annotation</description>
+      <supertypeName>se2015fall.pi2.yiuchanl.QAAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>tokens</name>
+          <description>tokens of the question</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>se2015fall.pi2.yiuchanl.Token</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>nGrams</name>
+          <description>ngrams of the question</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>se2015fall.pi2.yiuchanl.nGram</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>answers</name>
+          <description>answers of the question</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>se2015fall.pi2.yiuchanl.Answer</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>se2015fall.pi2.yiuchanl.Evaluator</name>
+      <description>this is a type for evaluator</description>
       <supertypeName>uima.cas.TOP</supertypeName>
+      <features>
+        <featureDescription>
+          <name>rankedAnswers</name>
+          <description>list of answers (ranked by score)</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>se2015fall.pi2.yiuchanl.Answer</elementType>
+        </featureDescription>
+      </features>
     </typeDescription>
   </types>
 </typeSystemDescription>

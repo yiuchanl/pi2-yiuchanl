@@ -1,5 +1,6 @@
 
-/* First created by JCasGen Sun Sep 13 14:57:34 EDT 2015 */
+/* First created by JCasGen Mon Sep 14 11:44:42 EDT 2015 */
+package se2015fall.pi2.yiuchanl;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -8,12 +9,11 @@ import org.apache.uima.cas.impl.FSGenerator;
 import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
-import org.apache.uima.jcas.cas.TOP_Type;
 
-/** for score
- * Updated by JCasGen Sun Sep 13 14:57:34 EDT 2015
+/** this is a type for token annotation
+ * Updated by JCasGen Mon Sep 14 17:54:44 EDT 2015
  * @generated */
-public class score_Type extends TOP_Type {
+public class Token_Type extends QAAnnotation_Type {
   /** @generated 
    * @return the generator for this type
    */
@@ -23,25 +23,25 @@ public class score_Type extends TOP_Type {
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (score_Type.this.useExistingInstance) {
+  			 if (Token_Type.this.useExistingInstance) {
   			   // Return eq fs instance if already created
-  		     FeatureStructure fs = score_Type.this.jcas.getJfsFromCaddr(addr);
+  		     FeatureStructure fs = Token_Type.this.jcas.getJfsFromCaddr(addr);
   		     if (null == fs) {
-  		       fs = new score(addr, score_Type.this);
-  			   score_Type.this.jcas.putJfsFromCaddr(addr, fs);
+  		       fs = new Token(addr, Token_Type.this);
+  			   Token_Type.this.jcas.putJfsFromCaddr(addr, fs);
   			   return fs;
   		     }
   		     return fs;
-        } else return new score(addr, score_Type.this);
+        } else return new Token(addr, Token_Type.this);
   	  }
     };
   /** @generated */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = score.typeIndexID;
+  public final static int typeIndexID = Token.typeIndexID;
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("score");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("se2015fall.pi2.yiuchanl.Token");
 
 
 
@@ -50,7 +50,7 @@ public class score_Type extends TOP_Type {
 	 * @param jcas JCas
 	 * @param casType Type 
 	 */
-  public score_Type(JCas jcas, Type casType) {
+  public Token_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
